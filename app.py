@@ -6,20 +6,11 @@ import nltk
 from nltk.stem.porter import PorterStemmer
 import numpy as np
 import scipy.sparse
-import os
+
 from sklearn.ensemble import ExtraTreesClassifier
-# Set a custom NLTK data directory to ensure compatibility
-nltk_data_dir = './nltk_data'
-os.makedirs(nltk_data_dir, exist_ok=True)
-
-# Set the environment variable to point to the local nltk_data directory
-os.environ['NLTK_DATA'] = nltk_data_dir
-
-# Download necessary resources
-nltk.download('punkt', download_dir=nltk_data_dir)
-nltk.download('stopwords', download_dir=nltk_data_dir)
+nltk.download('punkt')
+nltk.download('stopwords')
 nltk.download('punkt_tab')
-
 
 ps = PorterStemmer()
 
